@@ -1,8 +1,10 @@
+import Home  from "@/Home/Home"
 export function App() {
 
   return (
-    <>
-      <h1>Inicial projeto!</h1>
-    </>
+    <div className="App">
+      <Home />
+    </div>
+
   )
 }
