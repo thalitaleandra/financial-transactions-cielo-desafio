@@ -1,4 +1,4 @@
-import "@/Components/SideBar/styles.css";
+import "@/Components/SideBar/styles.scss";
 import DashboardIcon from '@mui/icons-material/Dashboard';
 export default function Sidebar (){
     return(
@@ -22,7 +22,10 @@ export default function Sidebar (){
             </li>
          </ul>
        </div>
-       <div className="bottom">color options</div>
+       <div className="bottom">
+        <div className="colorOptions"></div>
+        <div className="colorOptions"></div>
+       </div>
       </div>
     )
 }
