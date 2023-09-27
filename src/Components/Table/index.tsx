@@ -1,28 +1,7 @@
 import * as React from 'react';
 import { DataGrid, GridColDef, GridValueGetterParams } from '@mui/x-data-grid';
 import "./styles.scss";
-export interface Transaction {
-    id: string;
-    merchantId: number;
-    paymentNode: number;
-    cnpjRoot: number;
-    date: string;
-    paymentType: string;
-    cardBrand: string;
-    authorizationCode: string;
-    truncatedCardNumber: string;
-    grossAmount: number;
-    netAmount: number;
-    terminal: string;
-    administrationFee: number;
-    channelCode: number;
-    channel: string;
-    withdrawAmount: number;
-    minimumMDRAmmount: number;
-    mdrTaxAmount: number;
-    mdrFeeAmount: number;
-    status: string;
-  }
+
 const columns: GridColDef[] = [
   { field: 'id', headerName: 'ID', width: 70 },
   { field: 'firstName', headerName: 'First name', width: 130 },
