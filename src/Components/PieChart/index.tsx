@@ -1,10 +1,10 @@
-import React, { useState, useEffect  } from 'react';
+import { useState, useEffect  } from 'react';
 import { PieChart, Pie, Legend, Tooltip, Cell } from 'recharts';
 import useTransactionData from '@/Hooks/useTransactionData';
 import "./styles.scss"
 
 const COLORS = ['#FF5F00', '#00ADEF', '#1B365D', '#FD6012'];
-export default function Featured(){
+export default function PieChartComponent(){
   const transactions = useTransactionData();
   const [chartData, setChartData] = useState([]);
 

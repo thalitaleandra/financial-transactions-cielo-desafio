@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import Charts from "@/Components/Charts";
-import Feature from "@/Components/Featured";
+import { useState, useEffect } from 'react';
+import ChartComponent from "@/Components/Chart";
+import PieChartComponent from "@/Components/PieChart";
 import Navbar from "@/Components/NavBar";
 import Sidebar from "@/Components/SideBar";
-import  CustomTable from "@/Components/Table";
+import CustomTable from "@/Components/Table";
 import Widget from "@/Components/Widget";
 import fetchTransactions from '@/Services/fetchTransactions';
 import "./styles.scss";
@@ -37,8 +37,8 @@ export default function Home () {
                <Widget description="Total de Valor Líquido" value={totalNetAmount} porcentagem="25%" />
              </div>
              <div className="charts">
-                <Feature/>
-                <Charts />
+                <PieChartComponent />
+                <ChartComponent />
              </div>
              <div className="listContainer">
                 <div className="litTitle">Últimas Transações</div>
