@@ -22,7 +22,15 @@ export default function Charts (){
       return yearA - yearB;
     });
     const filteredData =  sortedData.filter(item => item.grossAmount <= 100 && item.netAmount <= 100);
-    setData(filteredData);
+    const uniqueData = filteredData.reduce((acc, item) => {
+      const year = Number(item.date.slice(-2));
+      if (!acc.uniqueYears.has(year)) {
+        acc.uniqueYears.add(year);
+        acc.result.push(item);
+      }
+      return acc;
+    }, { uniqueYears: new Set(), result: [] }).result;
+  setData(uniqueData)
   }, [formattedData]);
     return(
         <div className="chart">

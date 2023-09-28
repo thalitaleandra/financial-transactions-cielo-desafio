@@ -14,7 +14,7 @@ export default function CustomTable() {
     setData(formattedData);
   }, [formattedData]);
 
-  const handleChangePage = (event: unknown, newPage: number) => {
+  const handleChangePage = (newPage: number) => {
     setPage(newPage);
   };
 

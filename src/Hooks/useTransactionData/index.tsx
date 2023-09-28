@@ -14,6 +14,7 @@ export default function useTransactionData() {
             ...item,
             date: format(randomDate, 'dd/MM/yyyy'), 
             paymentType: (index < 10 && item.paymentType === "Crédito à vista") ? "Débito" : item.paymentType,
+            status: (index < 1 && item.status === "Aprovada") ? "Negada": item.status
           };
         });
         setFormattedData(formattedItems);
