@@ -1,20 +1,20 @@
-import "./styles.scss";
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
-import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
-export default function Widget(){
+import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
+import "./styles.scss";
+export default function Widget({description, value, porcentagem}){
     return(
         <div className="widget">
             <div className="left">
-                <span className="title">USERS</span>
-                <span className="counter">121212</span>
-                <span className="link">See all users</span>
+                <span className="title">{description}</span>
+                <span className="counter">{value}</span>
+                <span className="link">See all transactions</span>
             </div>
             <div className="right">
                 <div className="percentage positive">
                     <KeyboardArrowUpIcon />
-                    20%
+                   {porcentagem}
                 </div>
-                <PersonOutlineIcon className="icon" />
+                <AttachMoneyIcon className="icon" />
             </div>
         </div>
     )

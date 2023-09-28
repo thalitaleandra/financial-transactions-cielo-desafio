@@ -1,53 +1,73 @@
-import * as React from 'react';
-import { DataGrid, GridColDef, GridValueGetterParams } from '@mui/x-data-grid';
+import React, { useState, useEffect } from 'react';
+import { TableContainer, Table, TableHead, TableBody, TableRow, TableCell, Paper, TablePagination } from '@mui/material';
+import useTransactionData from '@/Hooks/useTransactionData'
 import "./styles.scss";
 
-const columns: GridColDef[] = [
-  { field: 'id', headerName: 'ID', width: 70 },
-  { field: 'firstName', headerName: 'First name', width: 130 },
-  { field: 'lastName', headerName: 'Last name', width: 130 },
-  {
-    field: 'age',
-    headerName: 'Age',
-    type: 'number',
-    width: 90,
-  },
-  {
-    field: 'fullName',
-    headerName: 'Full name',
-    description: 'This column has a value getter and is not sortable.',
-    sortable: false,
-    width: 160,
-    valueGetter: (params: GridValueGetterParams) =>
-      `${params.row.firstName || ''} ${params.row.lastName || ''}`,
-  },
-];
 
-const rows = [
-  { id: 1, lastName: 'Snow', firstName: 'Jon', age: 35 },
-  { id: 2, lastName: 'Lannister', firstName: 'Cersei', age: 42 },
-  { id: 3, lastName: 'Lannister', firstName: 'Jaime', age: 45 },
-  { id: 4, lastName: 'Stark', firstName: 'Arya', age: 16 },
-  { id: 5, lastName: 'Targaryen', firstName: 'Daenerys', age: null },
-  { id: 6, lastName: 'Melisandre', firstName: null, age: 150 },
-  { id: 7, lastName: 'Clifford', firstName: 'Ferrara', age: 44 },
-  { id: 8, lastName: 'Frances', firstName: 'Rossini', age: 36 },
-  { id: 9, lastName: 'Roxie', firstName: 'Harvey', age: 65 },
-];
-export default function TableTransactional (){
+export default function CustomTable() {
+  const formattedData = useTransactionData();
+  const [page, setPage] = useState(0);
+  const [rowsPerPage, setRowsPerPage] = useState(5);
+  const [data, setData] = useState([]);
+  
+  useEffect(() => {
+    setData(formattedData);
+  }, [formattedData]);
+
+  const handleChangePage = (event: unknown, newPage: number) => {
+    setPage(newPage);
+  };
+
+  const handleChangeRowsPerPage = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setRowsPerPage(parseInt(event.target.value, 10));
+    setPage(0);
+  };
  
-    return(
-        <div style={{ height: 400, width: '100%' }} className='table'>
-        <DataGrid
-          rows={rows}
-          columns={columns}
-          initialState={{
-            pagination: {
-              paginationModel: { page: 0, pageSize: 5 },
-            },
-          }}
-          pageSizeOptions={[5, 10]}
-        />
-      </div>
-    )
+  return (
+    <>
+      <TableContainer className="table" component={Paper}>
+        <Table>
+          <TableHead>
+            <TableRow>
+            <TableCell className="tableCollum">ID da Transação</TableCell>
+            <TableCell className="tableCollum">ID do Comerciante</TableCell>
+            <TableCell className="tableCollum">Tipo de Pagamento</TableCell>
+            <TableCell className="tableCollum">Bandeira do Cartão</TableCell>
+            <TableCell className="tableCollum">Data da Transação</TableCell>
+            <TableCell className="tableCollum">Valor Bruto</TableCell>
+            <TableCell className="tableCollum">Valor Líquido</TableCell>
+            <TableCell className="tableCollum">Status</TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {data.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row, index) => (
+              <TableRow  key={index} >
+                <TableCell className="tablecell">{row.id}</TableCell>
+                <TableCell className="tablecell">{row.merchantId}</TableCell>
+                <TableCell className="tablecell" >{row.paymentType}</TableCell>
+                <TableCell className="tablecell" >{row.cardBrand}</TableCell>
+                <TableCell className="tablecell">{row.date}</TableCell>
+                <TableCell className="tablecell">{row.grossAmount}</TableCell>
+                <TableCell className="tablecell">{row.netAmount}</TableCell>
+                <TableCell className="tablecell">
+                  <span className={`status ${row.status}`}>
+                  {row.status}
+                  </span>
+                  </TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
+      <TablePagination
+         rowsPerPageOptions={[5, 10, 25]}
+         component="div"
+         count={25}
+         rowsPerPage={rowsPerPage}
+         page={page}
+         onPageChange={handleChangePage}
+         onRowsPerPageChange={handleChangeRowsPerPage}
+      />
+    </>
+  );
 }

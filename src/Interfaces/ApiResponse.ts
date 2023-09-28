@@ -1,6 +1,6 @@
 import ITransactions  from './ITransactions';
 
-export interface ApiResponse {
+export default interface ApiResponse {
   summary: {
     totalQuantity: number;
     totalAmount: number;

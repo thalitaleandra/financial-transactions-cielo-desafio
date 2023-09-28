@@ -1,7 +1,6 @@
 import {
     ResponsiveContainer,
     ComposedChart,
-    Line,
     Area,
     Bar,
     XAxis,
@@ -10,52 +9,27 @@ import {
     Tooltip,
     Legend,
   } from 'recharts';
+  import { useState, useEffect } from 'react';
+  import useTransactionData from '@/Hooks/useTransactionData';
   import "./styles.scss"
-  const data = [
-    {
-      name: 'Page A',
-      uv: 590,
-      pv: 800,
-      amt: 1400,
-    },
-    {
-      name: 'Page B',
-      uv: 868,
-      pv: 967,
-      amt: 1506,
-    },
-    {
-      name: 'Page C',
-      uv: 1397,
-      pv: 1098,
-      amt: 989,
-    },
-    {
-      name: 'Page D',
-      uv: 1480,
-      pv: 1200,
-      amt: 1228,
-    },
-    {
-      name: 'Page E',
-      uv: 1520,
-      pv: 1108,
-      amt: 1100,
-    },
-    {
-      name: 'Page F',
-      uv: 1400,
-      pv: 680,
-      amt: 1700,
-    },
-  ];
-export default function Charts  (){
+export default function Charts (){
+  const formattedData = useTransactionData();
+  const [data, setData] = useState([]);
+  useEffect(() => {
+    const sortedData = [...formattedData].sort((transactionA, transactionB) => {
+      const yearA = Number(transactionA.date.slice(-2));
+      const yearB = Number(transactionB.date.slice(-2));
+      return yearA - yearB;
+    });
+    const filteredData =  sortedData.filter(item => item.grossAmount <= 100 && item.netAmount <= 100);
+    setData(filteredData);
+  }, [formattedData]);
     return(
-        <div style={{ width: '100%', height: 300 }} className="chart">
+        <div className="chart">
         <ResponsiveContainer>
           <ComposedChart
             width={500}
-            height={400}
+            height={300}
             data={data}
             margin={{
               top: 20,
@@ -65,13 +39,15 @@ export default function Charts  (){
             }}
           >
             <CartesianGrid stroke="#f5f5f5" />
-            <XAxis dataKey="name" scale="band" />
+            <XAxis dataKey="date" name="Ano"  tickFormatter={(value) => {
+               const lastFourDigits = value.slice(-4);
+               return lastFourDigits;
+               }} scale="band" />
             <YAxis />
             <Tooltip />
             <Legend />
-            <Area type="monotone" dataKey="amt" fill="#8884d8" stroke="#8884d8" />
-            <Bar dataKey="pv" barSize={20} fill="#413ea0" />
-            <Line type="monotone" dataKey="uv" stroke="#ff7300" />
+            <Area type="monotone"   dataKey="grossAmount" fill="#87CEEB" stroke="#4682B4"  name="Total Bruto" />
+            <Bar dataKey="netAmount"  barSize={20} fill="#4682B4" stroke="#708090" name="Total Líquido" />
           </ComposedChart>
         </ResponsiveContainer>
     </div>
