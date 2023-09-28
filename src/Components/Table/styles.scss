@@ -1,0 +1,46 @@
+.table {
+    overflow-x: auto; /* Adiciona uma barra de rolagem horizontal quando a tabela ultrapassa o tamanho da tela */
+    max-width: 100%; /* A tabela não pode ser maior do que a largura da tela disponível */
+  }
+  
+  /* Remove a sombra da borda da tabela */
+  .MuiDataGrid-main {
+    box-shadow: none;
+  }
+  
+  /* Faz com que os cabeçalhos da tabela sejam envolvidos corretamente */
+  .MuiDataGrid-colCellWrapper {
+    white-space: nowrap;
+  }
+  
+  /* Ajusta o estilo da célula quando o conteúdo é longo e é cortado */
+  .MuiDataGrid-cell {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Adiciona reticências (...) quando o texto é cortado */
+  }
+  @media (max-width: 600px) {
+    .MuiDataGrid-root {
+      display: block;
+    }
+  
+    .MuiDataGrid-row {
+      display: flex;
+      flex-direction: column;
+      border-bottom: 1px solid #ccc;
+      margin-bottom: 8px;
+      padding-bottom: 8px;
+    }
+  
+    .MuiDataGrid-colCellWrapper {
+      white-space: initial;
+      font-weight: bold;
+    }
+  
+    .MuiDataGrid-cell {
+      white-space: initial;
+      text-align: left;
+      font-size: 16px;
+      margin-bottom: 4px;
+    }
+  }
