@@ -24,22 +24,22 @@ export default function Sidebar (){
             <p className="title">HOME</p>
             <Link to="/" style={{textDecoration: "none"}}>
             <li>
-                <DashboardIcon className="icon" />
+                <DashboardIcon  aria-label="Dashboard" className="icon" />
                 <span>Dashboard</span>
             </li>
            </Link>
             <p className="title">Transactions</p>
             <Link to="/Transactions" style={{textDecoration: "none"}}>
             <li>
-               <AccountBalanceIcon className="icon" />
+               <AccountBalanceIcon aria-label="Transações" className="icon" />
                 <span>Transações</span>
             </li>
             </Link>
          </ul>
        </div>
        <div className="bottom">
-        <div className="colorOptions" onClick={() => dispatch({ type: "LIGTH"}) }></div>
-        <div className="colorOptions" onClick={() => dispatch({ type: "DARK"})}></div>
+        <div className="colorOptions"  aria-label="Tema Claro" onClick={() => dispatch({ type: "LIGHT"}) }></div>
+        <div className="colorOptions"  aria-label="Tema Escuro" onClick={() => dispatch({ type: "DARK"})}></div>
        </div>
       </div>
     )

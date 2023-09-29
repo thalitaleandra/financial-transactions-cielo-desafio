@@ -10,9 +10,9 @@ interface WidgetPropos {
 }
 export default function Widget({description, value, porcentagem}: WidgetPropos){
     return(
-        <div className="widget">
+        <div className="widget" aria-label={`Widget: ${description}`}>
             <div className="left">
-                <span className="title">{description}</span>
+                <h2 className="title">{description}</h2>
                 <span className="counter">{value}</span>
                 <Link to="/Transactions" style={{textDecoration: "none"}}>
                 <span className="link">Ver detalhes de transações</span>

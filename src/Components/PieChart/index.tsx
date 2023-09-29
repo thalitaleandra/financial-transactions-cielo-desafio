@@ -26,6 +26,7 @@ export default function PieChartComponent({formattedData}: PieChartComponentProp
     setChartData(cardData);
   }, [formattedData]);
     return (
+      <div aria-label="Gráfico de Distribuição por Bandeira de Cartão">
         <PieChart width={400} height={400}>
            <text x="50%" y="5%" textAnchor="middle" dominantBaseline="middle"  className="piechartTitle" fontSize="1em">
            Distribuição por Bandeira de Cartão
@@ -47,5 +48,6 @@ export default function PieChartComponent({formattedData}: PieChartComponentProp
         <Tooltip />
         <Legend  />
       </PieChart>
+      </div>
       );
 }
