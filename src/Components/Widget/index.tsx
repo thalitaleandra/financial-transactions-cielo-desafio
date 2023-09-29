@@ -1,13 +1,22 @@
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
+import {Link} from "react-router-dom";
 import "./styles.scss";
-export default function Widget({description, value, porcentagem}){
+
+interface WidgetPropos {
+    description: string;
+    value: number;
+    porcentagem: string;
+}
+export default function Widget({description, value, porcentagem}: WidgetPropos){
     return(
         <div className="widget">
             <div className="left">
                 <span className="title">{description}</span>
                 <span className="counter">{value}</span>
-                <span className="link">See all transactions</span>
+                <Link to="/list" style={{textDecoration: "none"}}>
+                <span className="link">Ver detalhes de transações</span>
+                </Link>
             </div>
             <div className="right">
                 <div className="percentage positive">

@@ -3,21 +3,28 @@ import SearchIcon from '@mui/icons-material/Search';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import LanguageIcon from '@mui/icons-material/Language';
 import ListIcon from '@mui/icons-material/List';
-export default function Navbar (){
+import { useContext } from "react";
+import { DarkModeContext } from "@/Context/darkModeContext";
+
+interface NavbarProps {
+  disabled: boolean;
+}
+export default function Navbar ({disabled}: NavbarProps) {
+  const { dispatch } = useContext(DarkModeContext);
     return(
       <div className="navBar">
         <div className="wrapper">
          <div className="search">
-          <input type="text" placeholder="Search..." />
+          <input type="text"  disabled={disabled}  placeholder="Search..." />
           <SearchIcon />
          </div>
          <div className="items">
-         <div className="item">
+         <div className="itemP">
             <LanguageIcon className="icon"/>
-           English
+           Portuguese
           </div>
           <div className="item">
-            <DarkModeIcon className="icon"/>
+            <DarkModeIcon onClick={() => dispatch({ type: 'TOGGLE'}) } className="icon"/>
           </div>
           <div className="item">
             <ListIcon className="icon"/>

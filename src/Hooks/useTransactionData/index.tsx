@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
 import fetchTransactions from '@/Services/fetchTransactions';
+import ITransactions from '@/Interfaces/ITransactions';
 import { format } from 'date-fns';
 
 export default function useTransactionData() {
-  const [formattedData, setFormattedData] = useState([]);
+  const [formattedData, setFormattedData] = useState<ITransactions[]>([]);
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -14,6 +15,7 @@ export default function useTransactionData() {
             ...item,
             date: format(randomDate, 'dd/MM/yyyy'), 
             paymentType: (index < 10 && item.paymentType === "Crédito à vista") ? "Débito" : item.paymentType,
+            status: (index < 1 && item.status === "Aprovada") ? "Negada": item.status
           };
         });
         setFormattedData(formattedItems);

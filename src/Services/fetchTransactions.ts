@@ -6,7 +6,6 @@ export default async function fetchTransactions(): Promise<ApiResponse> {
     return {
         summary: response.data.summary,
         pagination: response.data.pagination,
-        totalElements: response.data.pagination.totalElements,
         items: response.data.items,
     };
 }

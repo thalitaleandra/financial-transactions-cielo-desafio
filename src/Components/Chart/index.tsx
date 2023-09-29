@@ -11,10 +11,11 @@ import {
   } from 'recharts';
   import { useState, useEffect } from 'react';
   import useTransactionData from '@/Hooks/useTransactionData';
+  import ITransactions from '@/Interfaces/ITransactions';
   import "./styles.scss"
 export default function Charts (){
   const formattedData = useTransactionData();
-  const [data, setData] = useState([]);
+  const [data, setData] = useState<ITransactions[]>([]);
   useEffect(() => {
     const sortedData = [...formattedData].sort((transactionA, transactionB) => {
       const yearA = Number(transactionA.date.slice(-2));
@@ -22,7 +23,16 @@ export default function Charts (){
       return yearA - yearB;
     });
     const filteredData =  sortedData.filter(item => item.grossAmount <= 100 && item.netAmount <= 100);
-    setData(filteredData);
+    const uniqueData = filteredData.reduce((acc, item) => {
+      const year = Number(item.date.slice(-2));
+      if (!acc.uniqueYears.has(year)) {
+        acc.uniqueYears.add(year);
+        acc.result.push(item);
+      }
+      return acc;
+    }, { uniqueYears: new Set<number>(), result: [] as ITransactions[] }).result;
+
+  setData(uniqueData)
   }, [formattedData]);
     return(
         <div className="chart">

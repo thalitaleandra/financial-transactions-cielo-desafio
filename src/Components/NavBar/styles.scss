@@ -26,12 +26,25 @@
                 font-size: 30px;
             }
         }
+        input:disabled {
+            cursor: not-allowed; 
+            filter: blur(1.5px);
+          }
     }
     .items {
         display: flex;
         align-items: center;
 
         .item{
+            display: flex;
+            align-items: center;
+            margin-right: 20px;
+            cursor: pointer;
+            .icon {
+               font-size: 30px;
+            }
+        }
+        .itemP{
             display: flex;
             align-items: center;
             margin-right: 20px;
