@@ -23,4 +23,22 @@
       margin-bottom:25px;
      }
   }
+  @media (max-width: 600px) {
+    .homeContainer{
+      max-width: 480px;
+      width: 100%; 
+    }
+    .charts, .widgets {
+      flex-direction: column;
+      margin-top: 5px;
+    }
+    
+  }
+  
+  @media (min-width: 601px) and (max-width: 900px) {
+    .charts {
+      flex-direction: row;
+    }
+  }
+ 
 }

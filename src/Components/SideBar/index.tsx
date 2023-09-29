@@ -12,8 +12,10 @@ export default function Sidebar (){
        <div className="top">
         
         <Link to="/" style={{textDecoration: "none"}}> 
-        <img src={CieloLogo} alt="Cielo Logo" className="logoImage" />
-        <span className="logo">Projeto Cielo</span>
+        <div className="logoContainer">
+            <img src={CieloLogo} alt="Cielo Logo" className="logoImage" />
+            <span className="logo">Projeto Cielo</span>
+          </div>
         </Link>
         </div>
         <hr/>

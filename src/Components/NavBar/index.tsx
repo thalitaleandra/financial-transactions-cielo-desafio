@@ -26,7 +26,7 @@ export default function Navbar ({disabled}: NavbarProps) {
           <div className="item">
             <DarkModeIcon onClick={() => dispatch({ type: 'TOGGLE'}) } className="icon"/>
           </div>
-          <div className="item">
+          <div className="itemL">
             <ListIcon className="icon"/>
           </div>
          </div>

@@ -13,6 +13,11 @@
             align-items: center;
             justify-content: center;
         }
+        .logoContainer {
+            display: flex; 
+            align-items: center; 
+            justify-content: center;
+          }
         .logoImage {
             width: 40px; 
             height: 40px; 
@@ -84,4 +89,44 @@
             }
         }
     }
+    @media (max-width: 600px) {
+      display: none;
+        .center {
+          display: none; 
+        }
+        .top {
+            display: none;
+        }
+        .bottom{
+            display: none;
+        }
+      }
+      @media (max-width: 768px) {
+        .top {
+          .logo {
+            font-size: 13px; 
+          }
+          .logoImage {
+            width: 30px; 
+            height: 30px; 
+          }
+        }
+    
+        .center {
+          ul {
+            .title {
+              font-size: 8px; 
+            }
+    
+            li {
+              span {
+                font-size: 15px; 
+              }
+              .icon{
+                font-size: 15px;
+              }
+            }
+          }
+        }
+      }
 }

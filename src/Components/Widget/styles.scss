@@ -45,4 +45,12 @@
     border-radius: 5px;
     align-self: flex-end;
    }
+   @media (max-width: 600px) {
+    .widget {
+      font-size: 12px; 
+      .title{
+        font-size: 10px;
+      }
+    }
+  }
 }
