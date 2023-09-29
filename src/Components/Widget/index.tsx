@@ -14,7 +14,7 @@ export default function Widget({description, value, porcentagem}: WidgetPropos){
             <div className="left">
                 <span className="title">{description}</span>
                 <span className="counter">{value}</span>
-                <Link to="/list" style={{textDecoration: "none"}}>
+                <Link to="/Transactions" style={{textDecoration: "none"}}>
                 <span className="link">Ver detalhes de transações</span>
                 </Link>
             </div>

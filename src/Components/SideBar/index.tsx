@@ -12,8 +12,10 @@ export default function Sidebar (){
        <div className="top">
         
         <Link to="/" style={{textDecoration: "none"}}> 
-        <img src={CieloLogo} alt="Cielo Logo" className="logoImage" />
-        <span className="logo">Projeto Cielo</span>
+        <div className="logoContainer">
+            <img src={CieloLogo} alt="Cielo Logo" className="logoImage" />
+            <span className="logo">Projeto Cielo</span>
+          </div>
         </Link>
         </div>
         <hr/>
@@ -26,8 +28,8 @@ export default function Sidebar (){
                 <span>Dashboard</span>
             </li>
            </Link>
-            <p className="title">List</p>
-            <Link to="/list" style={{textDecoration: "none"}}>
+            <p className="title">Transactions</p>
+            <Link to="/Transactions" style={{textDecoration: "none"}}>
             <li>
                <AccountBalanceIcon className="icon" />
                 <span>Transações</span>

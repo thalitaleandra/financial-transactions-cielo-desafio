@@ -7,7 +7,7 @@
    color: #555;
    .wrapper {
     width: 100%;
-    padding: 30px;
+    padding: 10px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -44,7 +44,7 @@
                font-size: 30px;
             }
         }
-        .itemP{
+        .itemL{
             display: flex;
             align-items: center;
             margin-right: 20px;
@@ -54,4 +54,20 @@
         }
     }
    }
+   
+  @media (max-width: 600px) {
+    .wrapper {
+        padding: 5px;
+      .items {
+        .item{
+        }
+        .itemL{
+         display: none;
+        }
+        .icon{
+            font-size: 20px; 
+        }
+      }
+    }
+}
 }
