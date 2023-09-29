@@ -13,6 +13,7 @@ export default function DetailsTable({formattedData}: DetailsTableProps ) {
     const [loading, setLoading] = useState(true);
     const [transaction, setTransaction] = useState<ITransactions[]>([]);
     const [openRow, setOpenRow] = useState<string | null>(null);
+    
   
     useEffect(() => {
         setTransaction(formattedData);

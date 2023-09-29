@@ -1,22 +1,37 @@
-import "./styles.scss"
 import SearchIcon from '@mui/icons-material/Search';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import ListIcon from '@mui/icons-material/List';
-import { useContext } from "react";
+import { useContext, useState,  FormEvent } from "react";
 import { DarkModeContext } from "@/Context/darkModeContext";
+import "./styles.scss";
+
 
 interface NavbarProps {
   disabled: boolean;
+  handleFilterData?: (searchTerm: string) => void; 
 }
-export default function Navbar ({disabled}: NavbarProps) {
+
+export default function Navbar ({disabled,  handleFilterData}: NavbarProps ) {
+  const [busca, setBusca] = useState('');
   const { dispatch } = useContext(DarkModeContext);
+
+  function filterData(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    handleFilterData(busca); 
+  }
     return(
       <div className="navBar">
         <div className="wrapper">
-         <div className="search">
-          <input type="text"  disabled={disabled}  placeholder="Search..." />
+         <form className="search" onSubmit={filterData}>
+          <input 
+            type="search"  
+            disabled={disabled}
+            placeholder="Insira Id da Transação..." 
+            value={busca}
+            onChange={(ev) => setBusca(ev.target.value)}
+            />
           <SearchIcon />
-         </div>
+         </form>
          <div className="items">
           <div className="item">
             <DarkModeIcon onClick={() => dispatch({ type: 'TOGGLE'}) } className="icon"/>
