@@ -49,17 +49,24 @@ export default function Charts ({formattedData}: ChartsProps){
               bottom: 20,
               left: 20,
             }}
+            aria-label="Gráfico de Transações"
           >
             <CartesianGrid stroke="#f5f5f5" />
             <XAxis dataKey="date" name="Ano"  tickFormatter={(value) => {
                const lastFourDigits = value.slice(-4);
                return lastFourDigits;
-               }} scale="band" />
-            <YAxis />
+               }} 
+               scale="band"
+               aria-label="Eixo X - Ano"
+               />
+            <YAxis 
+             aria-label="Eixo Y - Valores"
+             label={{ value: 'Valores', angle: -90, position: 'insideLeft' }} 
+             />
             <Tooltip />
             <Legend />
-            <Area type="monotone"   dataKey="grossAmount" fill="#87CEEB" stroke="#4682B4"  name="Total Bruto" />
-            <Bar dataKey="netAmount"  barSize={20} fill="#4682B4" stroke="#708090" name="Total Líquido" />
+            <Area type="monotone" aria-label="Área de Gráfico - Total Bruto"   dataKey="grossAmount" fill="#87CEEB" stroke="#4682B4"  name="Total Bruto" />
+            <Bar dataKey="netAmount" aria-label="Barra de Gráfico - Total Líquido" barSize={20} fill="#4682B4" stroke="#708090" name="Total Líquido" />
           </ComposedChart>
         </ResponsiveContainer>
     </div>

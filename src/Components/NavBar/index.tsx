@@ -17,7 +17,9 @@ export default function Navbar ({disabled,  handleFilterData}: NavbarProps ) {
 
   function filterData(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    handleFilterData(busca); 
+    if (handleFilterData) {
+      handleFilterData(busca);
+    }
   }
     return(
       <div className="navBar">
@@ -30,14 +32,14 @@ export default function Navbar ({disabled,  handleFilterData}: NavbarProps ) {
             value={busca}
             onChange={(ev) => setBusca(ev.target.value)}
             />
-          <SearchIcon />
+          <SearchIcon aria-label="Ícone de busca" />
          </form>
          <div className="items">
           <div className="item">
-            <DarkModeIcon onClick={() => dispatch({ type: 'TOGGLE'}) } className="icon"/>
+            <DarkModeIcon  aria-label="Ícone de modo escuro"  onClick={() => dispatch({ type: 'TOGGLE'}) } className="icon"/>
           </div>
           <div className="itemL">
-            <ListIcon className="icon"/>
+            <ListIcon  aria-label="Ícone de lista" className="icon"/>
           </div>
          </div>
         </div>

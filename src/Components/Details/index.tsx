@@ -56,6 +56,8 @@ export default function DetailsTable({formattedData}: DetailsTableProps ) {
                       variant="text"
                       size="small"
                       onClick={() => handleCollapse(row.id)}
+                      aria-expanded={openRow === row.id ? 'true' : 'false'}
+                      aria-controls={`transaction-details-${row.id}`}
                     >
                       {openRow === row.id ? 'Esconda Detalhes' : 'Detalhes'}
                     </Button>
@@ -82,7 +84,7 @@ export default function DetailsTable({formattedData}: DetailsTableProps ) {
                     <Typography variant="h6" className="tablecellType" gutterBottom component="div">
                         Histórico de Transação
                     </Typography>
-                    <Table size="small" aria-label="purchases">
+                    <Table size="small"  aria-label={`Histórico de Transação da ID ${row.id}`}>
                         <TableHead>
                         <TableRow>
                             <TableCell className="tablecell">Nó de Pagamento</TableCell>

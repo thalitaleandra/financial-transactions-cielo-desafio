@@ -27,18 +27,18 @@ export default function CustomTable({formattedData}: CustomTableProps ) {
  
   return (
     <>
-      <TableContainer className="table" component={Paper}>
+      <TableContainer className="table" aria-label="Tabela de Transações" component={Paper}>
         <Table>
           <TableHead>
             <TableRow>
-            <TableCell className="tableCollum">ID da Transação</TableCell>
-            <TableCell className="tableCollum">ID do Comerciante</TableCell>
-            <TableCell className="tableCollum">Tipo de Pagamento</TableCell>
-            <TableCell className="tableCollum">Bandeira do Cartão</TableCell>
-            <TableCell className="tableCollum">Data da Transação</TableCell>
-            <TableCell className="tableCollum">Valor Bruto</TableCell>
-            <TableCell className="tableCollum">Valor Líquido</TableCell>
-            <TableCell className="tableCollum">Status</TableCell>
+            <TableCell  scope="col" className="tableCollum">ID da Transação</TableCell>
+            <TableCell  scope="col" className="tableCollum">ID do Comerciante</TableCell>
+            <TableCell  scope="col" className="tableCollum">Tipo de Pagamento</TableCell>
+            <TableCell  scope="col" className="tableCollum">Bandeira do Cartão</TableCell>
+            <TableCell  scope="col" className="tableCollum">Data da Transação</TableCell>
+            <TableCell  scope="col" className="tableCollum">Valor Bruto</TableCell>
+            <TableCell  scope="col" className="tableCollum">Valor Líquido</TableCell>
+            <TableCell  scope="col" className="tableCollum">Status</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
