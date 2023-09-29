@@ -6,7 +6,7 @@ import { useContext } from 'react';
 import { DarkModeContext } from './Context/darkModeContext';
 
 export function App() {
-  const { darkMode } = useContext(DarkModeContext)
+  const {darkMode} = useContext(DarkModeContext);
   return (
     <div className={darkMode ? "app dark" : "app"}>
       <BrowserRouter>

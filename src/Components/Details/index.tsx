@@ -68,8 +68,8 @@ export default function DetailsTable() {
                 <TableRow>
                   <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
                     <Collapse in={openRow === row.id} timeout="auto" unmountOnExit>
-                    <Box sx={{ margin: 1 }}>
-                    <Typography variant="h6" className="tablecell" gutterBottom component="div">
+                    <Box sx={{ margin: 1, marginLeft: 19 }}>
+                    <Typography variant="h6" className="tablecellType" gutterBottom component="div">
                         Histórico de Transação
                     </Typography>
                     <Table size="small" aria-label="purchases">

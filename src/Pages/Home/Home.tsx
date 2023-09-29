@@ -6,12 +6,14 @@ import Sidebar from "@/Components/SideBar";
 import CustomTable from "@/Components/Table";
 import Widget from "@/Components/Widget";
 import fetchTransactions from '@/Services/fetchTransactions';
+import Loader from '@/Components/Load/index.tsx';
 import "./styles.scss";
 
 export default function Home () {
-    const [totalQuantity, settotalQuantity] = useState(null);
-    const [totalAmount, settotalAmount] = useState(null);
-    const [totalNetAmount, settotalNetAmount] = useState(null);
+    const [loading, setLoading] = useState(true);
+    const [totalQuantity, settotalQuantity] = useState(0);
+    const [totalAmount, settotalAmount] = useState(0);
+    const [totalNetAmount, settotalNetAmount] = useState(0);
     useEffect(() => {
         const fetchData = async () => {
             try {
@@ -21,16 +23,21 @@ export default function Home () {
                 settotalNetAmount(response.summary.totalNetAmount);
             } catch (error) {
                 console.error('error');
+             } finally {
+                setLoading(false); 
             }
         };
 
         fetchData();
     }, []);
+    if (loading) {
+        return <Loader />; 
+    }
     return (
         <div className="home">
             <Sidebar />
             <div className="homeContainer">
-             <Navbar/>
+             <Navbar disabled={true}/>
              <div className="widgets">
                <Widget description="Total de Transações" value={totalQuantity} porcentagem="20%" />
                <Widget description="Total de Valor Bruto" value={totalAmount} porcentagem="35%" />

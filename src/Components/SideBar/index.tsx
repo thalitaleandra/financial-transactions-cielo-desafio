@@ -4,13 +4,16 @@ import {Link} from "react-router-dom";
 import "./styles.scss";
 import { useContext } from 'react';
 import { DarkModeContext } from '@/Context/darkModeContext';
+import CieloLogo from "@/Assets/img/logo.png"
 export default function Sidebar (){
   const {dispatch} = useContext(DarkModeContext)
     return(
       <div className="sideBar">
        <div className="top">
-        <Link to="/" style={{textDecoration: "none"}}>
-        <span className="logo">admin</span>
+        
+        <Link to="/" style={{textDecoration: "none"}}> 
+        <img src={CieloLogo} alt="Cielo Logo" className="logoImage" />
+        <span className="logo">Projeto Cielo</span>
         </Link>
         </div>
         <hr/>

@@ -8,10 +8,22 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        a{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .logoImage {
+            width: 40px; 
+            height: 40px; 
+            object-fit: cover; 
+            border-radius: 50%;
+          }
         .logo{
             font-size: 20px;
             font-weight: bold;
-            color: #6439ff;
+            color: #4682B4;
+            align-items: center;
         }
     }
     hr{
