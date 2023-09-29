@@ -44,14 +44,6 @@
                font-size: 30px;
             }
         }
-        .itemP{
-            display: flex;
-            align-items: center;
-            margin-right: 20px;
-            .icon {
-               font-size: 30px;
-            }
-        }
         .itemL{
             display: flex;
             align-items: center;
@@ -69,7 +61,7 @@
       .items {
         .item{
         }
-        .itemP, .itemL{
+        .itemL{
          display: none;
         }
         .icon{

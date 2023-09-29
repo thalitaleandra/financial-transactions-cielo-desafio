@@ -1,17 +1,22 @@
 import React, { useState, useEffect } from 'react';
+import Loader from '@/Components/Load/index.tsx';
 import { Button, Collapse, Table, Typography, Box, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@mui/material';
-import useTransactionData from '@/Hooks/useTransactionData';
 import ITransactions from '@/Interfaces/ITransactions';
 import './styles.scss'
 
+interface DetailsTableProps {
+  formattedData: ITransactions[];
+}
 
-export default function DetailsTable() {
-    const formattedData = useTransactionData();
+
+export default function DetailsTable({formattedData}: DetailsTableProps ) {
+    const [loading, setLoading] = useState(true);
     const [transaction, setTransaction] = useState<ITransactions[]>([]);
     const [openRow, setOpenRow] = useState<string | null>(null);
   
     useEffect(() => {
-        setTransaction( formattedData)
+        setTransaction(formattedData);
+        setLoading(false); 
       }, [formattedData]);
 
     const handleCollapse = (rowName: string) => {
@@ -21,6 +26,9 @@ export default function DetailsTable() {
         setOpenRow(rowName);
       }
     };
+    if (loading) {
+      return <Loader />; 
+  }
   
     return (
       <TableContainer className="list" component={Paper}>

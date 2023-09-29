@@ -28,8 +28,8 @@ export default function Sidebar (){
                 <span>Dashboard</span>
             </li>
            </Link>
-            <p className="title">List</p>
-            <Link to="/list" style={{textDecoration: "none"}}>
+            <p className="title">Transactions</p>
+            <Link to="/Transactions" style={{textDecoration: "none"}}>
             <li>
                <AccountBalanceIcon className="icon" />
                 <span>Transações</span>

@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { TableContainer, Table, TableHead, TableBody, TableRow, TableCell, Paper, TablePagination } from '@mui/material';
-import useTransactionData from '@/Hooks/useTransactionData';
 import ITransactions from '@/Interfaces/ITransactions';
 import "./styles.scss";
 
+interface CustomTableProps {
+  formattedData: ITransactions[];
+}
 
-export default function CustomTable() {
-  const formattedData = useTransactionData();
+export default function CustomTable({formattedData}: CustomTableProps ) {
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(5);
   const [data, setData] = useState<ITransactions[]>([]);

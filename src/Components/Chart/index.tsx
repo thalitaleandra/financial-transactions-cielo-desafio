@@ -10,11 +10,13 @@ import {
     Legend,
   } from 'recharts';
   import { useState, useEffect } from 'react';
-  import useTransactionData from '@/Hooks/useTransactionData';
   import ITransactions from '@/Interfaces/ITransactions';
-  import "./styles.scss"
-export default function Charts (){
-  const formattedData = useTransactionData();
+  import "./styles.scss";
+
+  interface ChartsProps {
+    formattedData: ITransactions[];
+  }
+export default function Charts ({formattedData}: ChartsProps){
   const [data, setData] = useState<ITransactions[]>([]);
   useEffect(() => {
     const sortedData = [...formattedData].sort((transactionA, transactionB) => {

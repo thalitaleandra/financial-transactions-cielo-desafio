@@ -12,7 +12,7 @@ export function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home  />} />
-          <Route path="list" element={<List />} />
+          <Route path="Transactions" element={<List />} />
         </Routes>
       </BrowserRouter>
     </div>

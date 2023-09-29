@@ -19,10 +19,6 @@ export default function Navbar ({disabled}: NavbarProps) {
           <SearchIcon />
          </div>
          <div className="items">
-         <div className="itemP">
-            <LanguageIcon className="icon"/>
-           Portuguese
-          </div>
           <div className="item">
             <DarkModeIcon onClick={() => dispatch({ type: 'TOGGLE'}) } className="icon"/>
           </div>

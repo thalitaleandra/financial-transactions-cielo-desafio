@@ -8,9 +8,11 @@ import CustomTable from "@/Components/Table";
 import Widget from "@/Components/Widget";
 import fetchTransactions from '@/Services/fetchTransactions';
 import Loader from '@/Components/Load/index.tsx';
+import useTransactionData from '@/Hooks/useTransactionData';
 import "./styles.scss";
 
 export default function Home () {
+    const transactions = useTransactionData();
     const [loading, setLoading] = useState(true);
     const [totalQuantity, settotalQuantity] = useState(0);
     const [totalAmount, settotalAmount] = useState(0);
@@ -57,12 +59,12 @@ export default function Home () {
             </Grid>
           </Grid>
           <div className="charts">
-            <PieChartComponent />
-            <ChartComponent />
+            <PieChartComponent formattedData={transactions} />
+            <ChartComponent formattedData={transactions} />
           </div>
           <div className="listContainer">
             <div className="litTitle">Últimas Transações</div>
-            <CustomTable />
+            <CustomTable formattedData={transactions} />
           </div>
         </div>
       </div>
