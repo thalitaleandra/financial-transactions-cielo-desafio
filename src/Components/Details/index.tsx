@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Button, Collapse, Table, Typography, Box, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@mui/material';
-import useTransactionData from '@/Hooks/useTransactionData'
+import useTransactionData from '@/Hooks/useTransactionData';
+import ITransactions from '@/Interfaces/ITransactions';
 import './styles.scss'
 
 
 export default function DetailsTable() {
     const formattedData = useTransactionData();
-    const [transaction, setTransaction] = useState([]);
+    const [transaction, setTransaction] = useState<ITransactions[]>([]);
     const [openRow, setOpenRow] = useState<string | null>(null);
   
     useEffect(() => {
@@ -47,7 +48,7 @@ export default function DetailsTable() {
                       size="small"
                       onClick={() => handleCollapse(row.id)}
                     >
-                      {openRow === row.name ? 'Esconda Detalhes' : 'Detalhes'}
+                      {openRow === row.id ? 'Esconda Detalhes' : 'Detalhes'}
                     </Button>
                   </TableCell>
                   <TableCell className="tablecell" component="th" scope="row">
