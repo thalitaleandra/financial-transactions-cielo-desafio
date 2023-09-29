@@ -1,4 +1,4 @@
-const DarkModeReducer = (state, action) => {
+const DarkModeReducer = (state: { darkMode: boolean }, action: { type: string }) => {
     switch (action.type) {
         case 'LIGTH':{
         return {

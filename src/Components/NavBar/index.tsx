@@ -5,7 +5,11 @@ import LanguageIcon from '@mui/icons-material/Language';
 import ListIcon from '@mui/icons-material/List';
 import { useContext } from "react";
 import { DarkModeContext } from "@/Context/darkModeContext";
-export default function Navbar ({disabled}){
+
+interface NavbarProps {
+  disabled: boolean;
+}
+export default function Navbar ({disabled}: NavbarProps) {
   const { dispatch } = useContext(DarkModeContext);
     return(
       <div className="navBar">

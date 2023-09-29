@@ -11,10 +11,11 @@ import {
   } from 'recharts';
   import { useState, useEffect } from 'react';
   import useTransactionData from '@/Hooks/useTransactionData';
+  import ITransactions from '@/Interfaces/ITransactions';
   import "./styles.scss"
 export default function Charts (){
   const formattedData = useTransactionData();
-  const [data, setData] = useState([]);
+  const [data, setData] = useState<ITransactions[]>([]);
   useEffect(() => {
     const sortedData = [...formattedData].sort((transactionA, transactionB) => {
       const yearA = Number(transactionA.date.slice(-2));
@@ -29,7 +30,8 @@ export default function Charts (){
         acc.result.push(item);
       }
       return acc;
-    }, { uniqueYears: new Set(), result: [] }).result;
+    }, { uniqueYears: new Set<number>(), result: [] as ITransactions[] }).result;
+
   setData(uniqueData)
   }, [formattedData]);
     return(

@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
 import fetchTransactions from '@/Services/fetchTransactions';
+import ITransactions from '@/Interfaces/ITransactions';
 import { format } from 'date-fns';
 
 export default function useTransactionData() {
-  const [formattedData, setFormattedData] = useState([]);
+  const [formattedData, setFormattedData] = useState<ITransactions[]>([]);
   useEffect(() => {
     const fetchData = async () => {
       try {
