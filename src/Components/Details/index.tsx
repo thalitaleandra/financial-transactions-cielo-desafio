@@ -50,10 +50,10 @@ export default function DetailsTable() {
                       {openRow === row.name ? 'Esconda Detalhes' : 'Detalhes'}
                     </Button>
                   </TableCell>
-                  <TableCell component="th" scope="row">
+                  <TableCell className="tablecell" component="th" scope="row">
                     {row.id}
                   </TableCell>
-                  <TableCell className="tablecell">{row.merchantId}</TableCell>
+                <TableCell className="tablecell">{row.merchantId}</TableCell>
                 <TableCell className="tablecell" >{row.paymentType}</TableCell>
                 <TableCell className="tablecell" >{row.cardBrand}</TableCell>
                 <TableCell className="tablecell">{row.date}</TableCell>
@@ -69,54 +69,54 @@ export default function DetailsTable() {
                   <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
                     <Collapse in={openRow === row.id} timeout="auto" unmountOnExit>
                     <Box sx={{ margin: 1 }}>
-                    <Typography variant="h6" gutterBottom component="div">
+                    <Typography variant="h6" className="tablecell" gutterBottom component="div">
                         Histórico de Transação
                     </Typography>
                     <Table size="small" aria-label="purchases">
                         <TableHead>
                         <TableRow>
-                            <TableCell >Nó de Pagamento</TableCell>
-                            <TableCell >CNPJ Raiz</TableCell>
-                            <TableCell>Código de Autorização</TableCell>
-                            <TableCell>Número de Cartão Truncado</TableCell>
-                            <TableCell>Terminal</TableCell>
-                            <TableCell>Taxa de Administração</TableCell>
-                            <TableCell>Código de Canal</TableCell>
-                            <TableCell>Valor de Retirada</TableCell>
-                            <TableCell>Valor Mínimo de MDR</TableCell>
-                            <TableCell>Valor de Taxa MDR</TableCell>
-                            <TableCell>Valor de Taxa Livre de MDR</TableCell>
+                            <TableCell className="tablecell">Nó de Pagamento</TableCell>
+                            <TableCell className="tablecell" align="right">CNPJ Raiz</TableCell>
+                            <TableCell className="tablecell" align="right">Código de Autorização</TableCell>
+                            <TableCell className="tablecell" align="right">Número de Cartão Truncado</TableCell>
+                            <TableCell className="tablecell" align="right">Terminal</TableCell>
+                            <TableCell className="tablecell" align="right">Taxa de Administração</TableCell>
+                            <TableCell className="tablecell" align="right">Código de Canal</TableCell>
+                            <TableCell className="tablecell" align="right">Valor de Retirada</TableCell>
+                            <TableCell className="tablecell" align="right">Valor Mínimo de MDR</TableCell>
+                            <TableCell className="tablecell" align="right">Valor de Taxa MDR</TableCell>
+                            <TableCell className="tablecell" align="right">Valor de Taxa Livre de MDR</TableCell>
                         </TableRow>
                         </TableHead>
                          <TableBody>
                             <TableRow>
-                            <TableCell component="th" scope="row">
+                            <TableCell className="tablecell" component="th" scope="row">
                                 {row.paymentNode}
                             </TableCell>
-                            <TableCell>{row.cnpjRoot}</TableCell>
-                            <TableCell>{row.authorizationCode}</TableCell>
-                            <TableCell>
+                            <TableCell className="tablecell" align="right" >{row.cnpjRoot}</TableCell>
+                            <TableCell className="tablecell" align="right">{row.authorizationCode}</TableCell>
+                            <TableCell className="tablecell" align="right">
                                 {row.truncatedCardNumber}
                             </TableCell>
-                            <TableCell>
+                            <TableCell className="tablecell">
                                 {row.terminal}
                             </TableCell>
-                            <TableCell>
+                            <TableCell className="tablecell" align="right">
                                 {row.administrationFee}
                             </TableCell>
-                            <TableCell>
+                            <TableCell className="tablecell" align="right">
                                 {row.channelCode}
                             </TableCell>
-                            <TableCell>
+                            <TableCell className="tablecell" align="right">
                                 {row.withdrawAmount }
                             </TableCell>
-                            <TableCell>
+                            <TableCell className="tablecell" align="right">
                                 {row.minimumMDRAmmount}
                             </TableCell>
-                            <TableCell>
+                            <TableCell className="tablecell" align="right">
                                 {row.mdrTaxAmount}
                             </TableCell>
-                            <TableCell>
+                            <TableCell className="tablecell" align="right">
                                 {row.mdrFeeAmount}
                             </TableCell>
                             </TableRow>
