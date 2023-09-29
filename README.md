@@ -43,6 +43,7 @@ Para abrir e rodar o projeto, siga os passos abaixo:
 - TypeScript
 - Material-UI
 - Sass
+- Jest
 
 ## Funcionalidades do Projeto 📋
 
