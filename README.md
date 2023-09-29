@@ -1,27 +1,71 @@
-# React + TypeScript + Vite
+# Projeto Cielo - BootcampCielo + Ada 👩‍💻
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Desenvolvi este projeto de forma independente durante a segunda semana do Bootcamp Ada+Cielo 2023. Utilizei tecnologias modernas como React, Vite, TypeScript, Material-UI e Sass para criar uma aplicação web acessível e de alto desempenho.
 
-Currently, two official plugins are available:
+## Sobre o Projeto ℹ️
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+O Projeto Cielo é uma aplicação web que oferece uma interface intuitiva para visualização e gerenciamento de transações. Ele apresenta diversas funcionalidades, incluindo:
 
-## Expanding the ESLint configuration
+- Interface com temas dinâmicos: Light e Dark 🌞🌚.
+- Dois gráficos informativos e três widgets de resumo 📊.
+- Tabela detalhada das últimas transações 📜.
+- Página de detalhes individual de cada transação 📝.
+- Navegação otimizada e acessível 🚀.
+- Práticas de código e performance otimizadas 🛠️.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Deploy 🚀
 
-- Configure the top-level `parserOptions` property like this:
+- [Webapp](https://transactions-cielo-desafio-6s7ie3scw-thalitaleandras-projects.vercel.app/) 🌐
+- [API](https://back-cielo-again-nrhau7z2v-thalitaleandras-projects.vercel.app/transactions) 🌐
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+## Como Executar o Projeto ▶️
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Para abrir e rodar o projeto, siga os passos abaixo:
+
+1. Instale as dependências:
+  ```bash
+    npm install
+  ```
+2. Iniciar Servidor de Desenvolvimento:
+  ```bash
+   npm run dev
+  ```
+
+3. Rodar Testes:
+  ```bash
+    npm run dev
+  ```
+
+## Stack Tecnológica 🛠️
+
+- React
+- Vite
+- TypeScript
+- Material-UI
+- Sass
+
+## Funcionalidades do Projeto 📋
+
+- Interface com temas dinâmicos (Light e Dark) 🌞🌚.
+- Gráficos informativos e widgets de resumo 📊.
+- Tabela detalhada das últimas transações 📜.
+- Página de detalhes individual das transações 📝.
+- Navegação otimizada 🚀.
+
+## Histórico do Projeto 📆
+
+- Desenvolvi esse projeto durante a segunda semana do Bootcamp Cielo+Ada, de forma independente.
+- A aplicação foi construída com base nas diretrizes do WCAG2, garantindo acessibilidade.
+- A organização do código segue boas práticas e padrões de componentização.
+- A performance também foi uma consideração importante durante o desenvolvimento.
+
+## Aprendizado 📚
+
+- [Documentação React](https://reactjs.org/docs/getting-started.html).
+- [Documentação Vite](https://vitejs.dev/guide/).
+- [Documentação TypeScript](https://www.typescriptlang.org/docs/).
+- [Documentação Material-UI](https://mui.com/).
+- [Documentação Sass](https://sass-lang.com/documentation).
+- [WCAG2 - Acessibilidade na Web](https://www.w3.org/WAI/WCAG2QuickRef/).
+- [Guia de Estilo do Airbnb para React](https://airbnb.io/javascript/react/).
+- [Melhores Práticas do Web Vitals](https://web.dev/vitals/).
