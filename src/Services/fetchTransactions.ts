@@ -1,4 +1,4 @@
-import axiosInstance from '@/Libs/axios';
+import axiosInstance from '../Libs/axios';
 import  ApiResponse  from '@/Interfaces/ApiResponse';
 
 export default async function fetchTransactions(): Promise<ApiResponse> {

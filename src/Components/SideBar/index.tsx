@@ -3,12 +3,12 @@ import AccountBalanceIcon from '@mui/icons-material/AccountBalance';
 import {Link} from "react-router-dom";
 import "./styles.scss";
 import { useContext } from 'react';
-import { DarkModeContext } from '@/Context/darkModeContext';
+import { DarkModeContext } from '../../Context/darkModeContext';
 import CieloLogo from "@/Assets/img/logo.png"
 export default function Sidebar (){
   const {dispatch} = useContext(DarkModeContext)
     return(
-      <div className="sideBar">
+      <div  className="sideBar">
        <div className="top">
         
         <Link to="/" style={{textDecoration: "none"}}> 
