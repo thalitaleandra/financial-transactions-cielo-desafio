@@ -9,7 +9,7 @@ O Projeto Cielo é uma aplicação web que oferece uma interface intuitiva para 
 - Interface com temas dinâmicos: Light e Dark 🌞🌚.
 - Dois gráficos informativos e três widgets de resumo 📊.
 - Tabela detalhada das últimas transações 📜.
-- Página de tabela com detalhes individual de cada transação 📝.
+- Página com tabela com detalhes individual de cada transação 📝.
 - Navegação otimizada e acessível 🚀.
 - Práticas de código e performance otimizadas 🛠️.
 
