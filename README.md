@@ -33,7 +33,7 @@ Para abrir e rodar o projeto, siga os passos abaixo:
 
 3. Rodar Testes:
   ```bash
-    npm run dev
+    npm run test
   ```
 
 ## Stack Tecnológica 🛠️
