@@ -2,7 +2,7 @@ import { render, screen } from "@testing-library/react"
 import { faker } from "@faker-js/faker"
 import Table from "../index"
 
-const generateFormattedDataMock = () => [{id: faker.string.uuid(),  merchantId: faker.number.int(),
+const generateFormattedDataMock = () => [{id: faker.string.uuid(),  merchantId: faker.string.alpha(),
     paymentNode: faker.number.int(),
     cnpjRoot: faker.number.int(),
     date: faker.string.alpha(),
@@ -22,7 +22,30 @@ const generateFormattedDataMock = () => [{id: faker.string.uuid(),  merchantId: 
     mdrFeeAmount: faker.number.int(),
     status:faker.string.alpha()}]
 
-
+const formattedDataMock = [
+        {
+          "id": "114606514478703",
+          "merchantId": "2000463023",
+          "paymentNode": 485173,
+          "cnpjRoot": 485116,
+          "date": "2021-05-26T12:12:55",
+          "paymentType": "Crédito à vista",
+          "cardBrand": "Mastercard",
+          "authorizationCode": "378216",
+          "truncatedCardNumber": "1014",
+          "grossAmount": 80,
+          "netAmount": 76.88,
+          "terminal": "00032668",
+          "administrationFee": 3.9,
+          "channelCode": 15,
+          "channel": "Super Link / Digitada",
+          "withdrawAmount": 0,
+          "minimumMDRAmmount": -3.12,
+          "mdrTaxAmount": 0,
+          "mdrFeeAmount": -3.12,
+          "status": "Aprovada"
+        },
+];
 test("should render table headers", () => {
     render(<Table formattedData={generateFormattedDataMock()} />)
 
@@ -30,3 +53,18 @@ test("should render table headers", () => {
 
     tableHeaders.forEach(header => expect(screen.getByText(header)).toBeTruthy()) 
 })
+
+test("should render rows with data", () => {
+    render(<Table formattedData={formattedDataMock} />);
+  
+    formattedDataMock.forEach((data) => {
+        expect(screen.getByText(data.id)).toBeTruthy();
+        expect(screen.getByText(data.merchantId)).toBeTruthy();
+        expect(screen.getByText(data.paymentType)).toBeTruthy();
+        expect(screen.getByText(data.cardBrand)).toBeTruthy();
+        expect(screen.getByText(data.date)).toBeTruthy();
+        expect(screen.getByText(data.grossAmount.toString())).toBeTruthy();
+        expect(screen.getByText(data.netAmount.toString())).toBeTruthy();
+        expect(screen.getByText(data.status)).toBeTruthy();
+    });
+  });

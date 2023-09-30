@@ -1,6 +1,6 @@
 export default interface ITransactions {
     id: string;
-    merchantId: number;
+    merchantId: string;
     paymentNode: number;
     cnpjRoot: number;
     date: string;

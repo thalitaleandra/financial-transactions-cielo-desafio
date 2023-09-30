@@ -2,7 +2,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import ListIcon from '@mui/icons-material/List';
 import { useContext, useState,  FormEvent } from "react";
-import { DarkModeContext } from "@/Context/darkModeContext";
+import { DarkModeContext } from "../../Context/darkModeContext";
 import "./styles.scss";
 
 
