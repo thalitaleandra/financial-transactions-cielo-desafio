@@ -61,5 +61,3 @@ Para abrir e rodar o projeto, siga os passos abaixo:
 - [Documentação Material-UI](https://mui.com/).
 - [Documentação Sass](https://sass-lang.com/documentation).
 - [WCAG2 - Acessibilidade na Web](https://www.w3.org/WAI/WCAG2QuickRef/).
-- [Guia de Estilo do Airbnb para React](https://airbnb.io/javascript/react/).
-- [Melhores Práticas do Web Vitals](https://web.dev/vitals/).
