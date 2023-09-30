@@ -13,7 +13,7 @@ O Projeto Cielo é uma aplicação web que oferece uma interface intuitiva para 
 - Navegação otimizada e acessível 🚀.
 - Práticas de código e performance otimizadas 🛠️.
 
-## Stack Tecnológica 🛠️
+## Stack Tecnológica 🛠️ 🧰
 
 - React
 - Vite
