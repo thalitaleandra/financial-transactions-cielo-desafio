@@ -13,10 +13,15 @@ O Projeto Cielo é uma aplicação web que oferece uma interface intuitiva para 
 - Navegação otimizada e acessível 🚀.
 - Práticas de código e performance otimizadas 🛠️.
 
-## Deploy 🚀
+## Stack Tecnológica 🛠️
 
-- [Webapp](https://transactions-cielo-desafio-6s7ie3scw-thalitaleandras-projects.vercel.app/) 🌐
-- [API](https://back-cielo-again-nrhau7z2v-thalitaleandras-projects.vercel.app/transactions) 🌐
+- React
+- Vite
+- TypeScript
+- Material-UI
+- Sass
+- Jest
+
 
 ## Como Executar o Projeto ▶️
 
@@ -36,22 +41,10 @@ Para abrir e rodar o projeto, siga os passos abaixo:
     npm run test
   ```
 
-## Stack Tecnológica 🛠️
+## Deploy 🚀
 
-- React
-- Vite
-- TypeScript
-- Material-UI
-- Sass
-- Jest
-
-## Funcionalidades do Projeto 📋
-
-- Interface com temas dinâmicos (Light e Dark) 🌞🌚.
-- Gráficos informativos e widgets de resumo 📊.
-- Tabela detalhada das últimas transações 📜.
-- Página de detalhes individual das transações 📝.
-- Navegação otimizada 🚀.
+- [Webapp](https://transactions-cielo-desafio-6s7ie3scw-thalitaleandras-projects.vercel.app/) 🌐
+- [API](https://back-cielo-again-nrhau7z2v-thalitaleandras-projects.vercel.app/transactions) 🌐
 
 ## Histórico do Projeto 📆
 
